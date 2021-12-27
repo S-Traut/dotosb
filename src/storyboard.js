@@ -48,6 +48,10 @@ export class Storyboard {
 
 export function fromFile(file_path) {
   const data = fs.readFileSync(file_path, 'utf8');
+  return fromString(data);
+}
+
+export function fromString(data) {
   let layers = data.split('//Storyboard Layer ');
   layers.shift();
 
