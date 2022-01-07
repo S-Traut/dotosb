@@ -47,7 +47,9 @@ export class Storyboard {
 }
 
 export function fromFile(file_path) {
-  const data = fs.readFileSync(file_path, 'utf8');
+  let data = fs.readFileSync(file_path, 'utf8');
+  data = data.replace(/(\r\n|\r|\n)/g, '\n');
+  data = data.replace('\\', '/');
   return fromString(data);
 }
 
@@ -57,8 +59,9 @@ export function fromString(data) {
 
   const storyboard = new Storyboard();
   
-  for(const layer of layers) {
+  for (const layer of layers) {
     const sprites = layer.match(/(?=Sprite)(.*)(\n [A-Z](.*)|\n  [A-Z](.*))+/g);
+    if (!sprites) continue;
 
     for(let i = 0; i < sprites.length; i++) {
       const spritelines = sprites[i].split('\n');
