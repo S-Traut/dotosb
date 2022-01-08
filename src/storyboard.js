@@ -82,7 +82,12 @@ export function fromString(data) {
         const event_values = spritelines[e].split(',');
         const type = event_values[0].replace(/ /g,'');
 
-        
+        if(capturing && spritelines[e].split(',')[0][1] != ' ') {
+          capturing = false;
+          sprite.createLoop(loop.start, loop.count, capture);
+          capture = [];
+        }
+
         if(type == 'L') {
           capturing = true;
           loop = {
@@ -90,12 +95,6 @@ export function fromString(data) {
             count: parseInt(event_values[2])
           }
           continue;
-        }
-
-        if(capturing && spritelines[e].split(',')[0][1] != ' ') {
-          capturing = false;
-          sprite.createLoop(loop.start, loop.count, capture);
-          capture = [];
         }
 
         const isDynamic = event_values[3] == '' ? false : true;
