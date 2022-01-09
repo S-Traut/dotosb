@@ -120,7 +120,6 @@ export function fromString(data) {
           }
         } else {
           if (type == 'P') {
-            console.log(event_values);
             sprite.param(parseInt(event_values[2]), parseInt(event_values[3]), event_values[4]);
           } else {
             sprite.add(type, times_built, values_built, event_values[1]);    
