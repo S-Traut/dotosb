@@ -47,7 +47,7 @@ export class Sprite {
 
   toString() {
     let sprite = `Sprite,${this.layer},${this.origin},"${this.path}",${this.x},${this.y}\n`;
-    for(let i = 0; i < this.events.length; i++) {
+    for (let i = 0; i < this.events.length; i++) {
       sprite += `${this.events[i].stringified}\n`;
     }
     return sprite;

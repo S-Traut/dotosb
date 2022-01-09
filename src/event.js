@@ -69,7 +69,9 @@ export function newParam(start, end, type) {
     type: type,
     start: start,
     end: end,
-    stringified: ` P,${start},${end},${type}`
+    stringified: ` P,0,${start},${end},${type}`
   };
+
+  console.log(param);
   return param;
 }

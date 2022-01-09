@@ -114,13 +114,14 @@ export function fromString(data) {
 
         if(capturing) {
           if (type == 'P') {
-            capture.push(newParam(parseInt(event_values[1]), parseInt(event_values[2]), event_values[3]))
+            capture.push(newParam(parseInt(event_values[2]), parseInt(event_values[3]), event_values[4]))
           } else {
             capture.push(newEvent(type, times_built, values_built, event_values[1])); 
           }
         } else {
           if (type == 'P') {
-            sprite.param(parseInt(event_values[1]), parseInt(event_values[2]), event_values[3]);
+            console.log(event_values);
+            sprite.param(parseInt(event_values[2]), parseInt(event_values[3]), event_values[4]);
           } else {
             sprite.add(type, times_built, values_built, event_values[1]);    
           }
