@@ -1,0 +1,4 @@
+*.osb
+tests/
+ressources/
+examples/

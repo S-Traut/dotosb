@@ -14,9 +14,11 @@ function parseValues(values, isTime) {
 
 function isValid(event) {
   const type = EVENT_TYPES.get(event.type);
+
   
   if(!type) {
     console.trace();  
+    console.log(event);
     throw `This event type is not allowed '${event.type}'\nAllowed events: ${EVENT_TYPES.values()}\n`;    
   }
 

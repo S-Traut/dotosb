@@ -1,4 +1,4 @@
-class Storyboard {
+declare class Storyboard {
 
   private layers: Map<string, Array<Sprite>>
   
@@ -7,4 +7,4 @@ class Storyboard {
   toString(): string
 }
 
-function fromFile(file_path: string): Storyboard
+declare function fromFile(file_path: string): Storyboard

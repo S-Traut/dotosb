@@ -113,14 +113,14 @@ export function fromString(data) {
         const values_built = isDynamic ? start_values.concat(end_values) : start_values;
 
         if(capturing) {
-          if(type == 'P') {
-            capture.push(newParam(parseInt(event_values[1]), newParam(parseInt(event_values[2])), event_values[3]))
+          if (type == 'P') {
+            capture.push(newParam(parseInt(event_values[1]), parseInt(event_values[2]), event_values[3]))
           } else {
             capture.push(newEvent(type, times_built, values_built, event_values[1])); 
           }
         } else {
-          if(type == 'P') {
-            sprite.param(parseInt(event_values[1]), newParam(parseInt(event_values[2])), event_values[3]);
+          if (type == 'P') {
+            sprite.param(parseInt(event_values[1]), parseInt(event_values[2]), event_values[3]);
           } else {
             sprite.add(type, times_built, values_built, event_values[1]);    
           }

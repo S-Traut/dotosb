@@ -1,6 +1,6 @@
 {
   "name": "dotosb",
-  "version": "1.0.0",
+  "version": "1.1.4",
   "description": "Simple osb parser",
   "main": "index.js",
   "scripts": {
