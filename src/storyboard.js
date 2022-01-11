@@ -25,6 +25,11 @@ export class Storyboard {
     return sprite;
   }
 
+  addSprite(sprite) {
+    const storyboard_layer = this.layers.get(sprite.layer);
+    storyboard_layer.push(sprite);
+  }
+
   toString() {
     let storyboard = '[Events]\n//Background and Video events\n';
     let index = 0;
