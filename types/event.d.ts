@@ -1,4 +1,4 @@
-type Event = {
+declare type OsbEvent = {
   type: string,
   easing: number,
   start: number,
@@ -8,12 +8,12 @@ type Event = {
   stringified: string
 }
 
-type Parameter = {
+declare type OsbParameter = {
   type: string,
   start: number,
   end: number,
   stringified: string,
 }
 
-function newEvent(type: string, times: Array<number>, values: Array<number>, easing: number): Event
-function newParam(start: number, end: number, type: string): Parameter
+function newEvent(type: string, times: Array<number>, values: Array<number>, easing: number): OsbEvent
+function newParam(start: number, end: number, type: string): OsbParameter

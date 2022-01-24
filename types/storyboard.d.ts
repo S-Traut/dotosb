@@ -1,3 +1,5 @@
+declare module "dotosb"
+
 declare class Storyboard {
 
   private layers: Map<string, Array<Sprite>>
