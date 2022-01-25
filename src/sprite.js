@@ -22,6 +22,10 @@ export class Sprite {
     this.events.push(event);
   }
 
+  getEventAt(time) {
+    console.log("not implemented yet.");
+  }
+
   param(start, end, type) {
     const param = newParam(start, end , type);
     this.events.push(param);

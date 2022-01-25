@@ -11,7 +11,7 @@ const quartOut = (x) => reverse(quartIn, x);
 const quartInOut = (x) => toInOut(quartIn, x);
 const quintIn = (x) => x * x * x * x * x;
 const quintOut = (x) => reverse(quintIn, x);
-const quintInOut = (x) => toInOut(quintIn, x);
+const quintInOut = (x) => toInOut(quintIn, x); 
 const sineIn = (x) => 1 - Math.cos((x * Math.PI) / 2);
 const sineOut = (x) => reverse(sineIn, x);
 const sineInOut = (x) => toInOut(sineIn, x);
