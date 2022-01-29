@@ -1,3 +1,5 @@
+import { Sprite } from "dotosb";
+
 export default class Animation extends Sprite {
 
   frame_count;
@@ -5,11 +7,12 @@ export default class Animation extends Sprite {
   loop_type;
 
   constructor(path, frame_count, frame_delay, options) {
+    super();
     this.frame_count = frame_count;
     this.frame_delay = frame_delay;
     this.layer = options?.layer ?? "Background";
     this.origin = options?.origin ?? "Centre";
-    this.loop_type = options?.loop_type ?? "Forever";
+    this.loop_type = options?.loop_type ?? "LoopForever";
     this.path = path;
     this.x = options?.x ?? 320;
     this.y = options?.y ?? 240;

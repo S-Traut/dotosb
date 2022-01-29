@@ -1,4 +1,5 @@
 import { Sprite } from "./sprite.js";
+import Animation from "./animation.js";
 import fs from 'fs';
 import { newEvent, newParam } from "./event.js";
 
