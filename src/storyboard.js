@@ -25,6 +25,14 @@ export class Storyboard {
     return sprite;
   }
 
+  createAnimation(path, frame_count, frame_delay, options) {
+    const animation = new Animation(path, frame_count, frame_delay, options);
+    const storyboard_layer = this.layers.get(options?.layer ?? "Background");
+    storyboard_layer.push(animation);
+
+    return animation;
+  }
+
   addSprite(sprite) {
     const storyboard_layer = this.layers.get(sprite.layer);
     storyboard_layer.push(sprite);
