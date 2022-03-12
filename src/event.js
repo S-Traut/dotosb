@@ -44,7 +44,6 @@ export function newEvent(type, times, values, easing = 0) {
   let start_values = values;
   let end_values = null;
   values = sanitizeValues(values);
-  console.log(values);
 
   if(Array.isArray(values) && Array.isArray(times)) {
     const half = Math.ceil(values.length / 2);
