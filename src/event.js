@@ -43,6 +43,8 @@ export function newEvent(type, times, values, easing = 0) {
 
   let start_values = values;
   let end_values = null;
+  values = sanitizeValues(values);
+  console.log(values);
 
   if(Array.isArray(values) && Array.isArray(times)) {
     const half = Math.ceil(values.length / 2);
@@ -73,3 +75,19 @@ export function newParam(start, end, type) {
   };
   return param;
 }
+
+function sanitizeValues(values) {
+  return values.map((v) => {
+    let decimals = 0;
+    const str = String(v);
+    if(str.includes('.')) {
+      decimals = str.split('.')[1].length;
+    }
+
+    if(decimals > 4) {
+      return parseFloat(v.toFixed(4));
+    }
+    return v;
+  });
+}
+
