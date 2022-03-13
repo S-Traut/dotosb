@@ -75,6 +75,9 @@ export function newParam(start, end, type) {
 }
 
 function sanitizeValues(values) {
+  if(!Array.isArray(values))
+    return parseFloat(values.toFixed(4));
+
   return values.map((v) => {
     let decimals = 0;
     const str = String(v);
