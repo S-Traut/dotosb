@@ -40,7 +40,6 @@ function isValid(event) {
 }
 
 export function newEvent(type, times, values, easing = 0) {
-
   let start_values = values;
   let end_values = null;
   values = sanitizeValues(values);

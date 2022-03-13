@@ -1,4 +1,6 @@
 import { newEvent, newParam } from "./event.js";
+import IntervalMap from "./imap.js";
+import { ease } from './easing.js';
 
 export class Sprite {
 
@@ -15,15 +17,33 @@ export class Sprite {
     this.path = path;
     this.x = options?.x ?? 320;
     this.y = options?.y ?? 240;
+    this.imap = new IntervalMap();
   }
 
   add(type, times, values, easing = 0) {
     const event = newEvent(type, times, values, easing);
+    if(Array.isArray(times)) this.imap.add(event);
     this.events.push(event);
   }
 
-  getEventAt(time) {
-    console.log("not implemented yet.");
+  /**
+  * Query sprite parameters at a given time
+  */
+  getAt(type, time) {
+    const length = this.events.length; 
+    const events = this.imap.query(time);
+    for(const event of events) {
+      if(event.type != type) continue;
+      const vcount = event.start_values.length;
+      const differences = [];
+      const p = Math.abs((time - event.start) / (event.start - event.end));
+      const easing = ease(event.easing, p);
+      for(let i = 0; i < vcount; i++) {
+        const diff = Math.abs(event.start_values[i] - event.end_values[i]);
+        differences.push(event.start_values[i] + (diff * easing));  
+      }
+      return differences.length == 1 ? differences[0] : differences;
+    }
   }
 
   param(start, end, type) {
