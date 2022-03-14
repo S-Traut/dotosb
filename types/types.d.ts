@@ -3,7 +3,7 @@ declare module "dotosb" {
   class Storyboard {
     private layers: Map<string, Array<Sprite>>;
 
-    createSprite(path: string, options: SpriteOptions): Sprite;
+    createSprite(path: string, options?: Partial<SpriteOptions>): Sprite;
     write(file_path: string): void;
     toString(): string;
   }
@@ -11,13 +11,13 @@ declare module "dotosb" {
   function fromFile(file_path: string): Storyboard;
 
     class Sprite {
-    constructor(path: string, options: SpriteOptions);
+    constructor(path: string, options?: Partial<SpriteOptions>);
 
     add(
       type: string,
       times: Array<number>,
       values: Array<number>,
-      easing: number
+      easing?: number
     ): void;
     param(start: number, end: number, type: string): void;
     createLoop(
