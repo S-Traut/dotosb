@@ -1,11 +1,10 @@
 {
   "name": "dotosb",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "description": "Simple osb file parser",
   "main": "index.lib.js",
   "keywords": ["parser", "text", "file", "osb", "motion-design"],
   "author": "s-traut",
   "license": "ISC",
-  "type": "module",
   "types": "./types/types.d.ts"
 }
