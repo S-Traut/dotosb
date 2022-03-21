@@ -19,8 +19,7 @@ jobs:
           directory: 'src/'
           output: lib/
       - name: Moving file names properly
-        run: |
-          for file in lib/*.js; do mv -- "$file" "${file%%.js}"; done
+        run: .github/workflows/rename.sh
       - uses: actions/setup-node@v2
         with:
           node-version: 16
