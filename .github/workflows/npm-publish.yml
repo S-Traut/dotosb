@@ -16,11 +16,14 @@ jobs:
         with:
           directory: src
           output: lib
+      - uses: canastro/copy-file-action@master
+        with:
+          source: "package.json"
+          target: "./lib/package.json"
       - uses: actions/setup-node@v2
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: cp package.json lib/package.json
       - run: cd lib
       - run: npm ci
       - run: npm publish
