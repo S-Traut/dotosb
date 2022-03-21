@@ -1,1 +1,1 @@
-for file in *; do sudo mv "$file" "${file/.*./.}.js"; done
+for file in lib/*.lib.js; do sudo mv "$file" "${file/.*./.}.js"; done
