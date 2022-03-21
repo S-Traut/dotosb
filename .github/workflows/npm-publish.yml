@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - run: cp package.json lib/package.json
+      - run: cd lib
       - run: npm ci
       - run: npm publish
         env:
