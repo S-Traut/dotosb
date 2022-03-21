@@ -1,4 +1,4 @@
 for file in lib/*.js; 
 do 
-  mv -- "$file" "${file%%.js}"; 
+  sudo mv -- "$file" "${file%%.lib}"; 
 done
