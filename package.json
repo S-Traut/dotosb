@@ -1,17 +1,11 @@
 {
   "name": "dotosb",
-  "version": "1.5.4",
-  "description": "Simple osb parser",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "version": "1.5.5",
+  "description": "Simple osb file parser",
+  "main": "index.lib.js",
+  "keywords": ["parser", "text", "file", "osb", "motion-design"],
+  "author": "s-traut",
   "license": "ISC",
   "type": "module",
-  "types": "./types/types.d.ts",
-  "dependencies": {
-    "dotosb": "^1.5.0"
-  }
+  "types": "./types/types.d.ts"
 }

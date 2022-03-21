@@ -14,7 +14,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: JossyDevers/transpiler-js@v1.0.1
         with:
-          directory: src/
+          typename: 'lib'
+          directory: 'src/'
           output: lib/
       - uses: actions/setup-node@v2
         with:
