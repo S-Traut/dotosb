@@ -2,8 +2,13 @@
   "name": "dotosb",
   "version": "1.6.0",
   "description": "Simple, dependency free osb file parser",
-  "main": "lib/index.js",
+  "main": "index.js",
   "keywords": ["parser", "text", "file", "osb", "motion-design", "no-deps"],
   "author": "s-traut",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/foreseek/dotosb"
+  },
+  "types": "./types/types.d.ts"
 }
