@@ -1,4 +1,4 @@
-import { EVENT_TYPES } from "./utils.js";
+const { EVENT_TYPES } = require("./utils.js");
 
 function parseValues(values, isTime) {
   if(Array.isArray(values)) {
@@ -39,7 +39,7 @@ function isValid(event) {
   return true;
 }
 
-export function newEvent(type, times, values, easing = 0) {
+function newEvent(type, times, values, easing = 0) {
   let start_values = values;
   let end_values = null;
   values = sanitizeValues(values);
@@ -64,7 +64,7 @@ export function newEvent(type, times, values, easing = 0) {
     return event;
 }
 
-export function newParam(start, end, type) {
+function newParam(start, end, type) {
   const param = {
     type: type,
     start: start,
@@ -92,3 +92,4 @@ function sanitizeValues(values) {
   });
 }
 
+module.exports = { newEvent, newParam }; 

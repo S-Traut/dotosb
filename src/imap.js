@@ -1,4 +1,4 @@
-export default class IntervalMap {
+class IntervalMap {
 
   constructor() {
     this.start_times = [];
@@ -37,3 +37,5 @@ export default class IntervalMap {
     return events;
   }
 }
+
+module.exports = { IntervalMap };

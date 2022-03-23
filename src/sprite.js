@@ -1,8 +1,8 @@
-import { newEvent, newParam } from "./event.js";
-import IntervalMap from "./imap.js";
-import { ease } from './easing.js';
+const { newEvent, newParam } = require('./event.js');
+const { IntervalMap } = require('./imap.js');
+const { ease } = require('./easing.js');
 
-export class Sprite {
+class Sprite {
 
   events = [];
   path;
@@ -77,3 +77,5 @@ export class Sprite {
     return sprite;
   }
 }
+
+module.exports = { Sprite };

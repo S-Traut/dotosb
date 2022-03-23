@@ -1,9 +1,9 @@
-import { Sprite } from "./sprite.js";
-import Animation from "./animation.js";
-import fs from 'fs';
-import { newEvent, newParam } from "./event.js";
+const { Sprite } = require('./sprite.js');
+const { Animation } = require('./animation.js');
+const fs = require('fs');
+const { newEvent, newParam } = require("./event.js");
 
-export class Storyboard {
+class Storyboard {
 
   layers = new Map();
 
@@ -60,14 +60,14 @@ export class Storyboard {
   }
 }
 
-export function fromFile(file_path) {
+function fromFile(file_path) {
   let data = fs.readFileSync(file_path, 'utf8');
   data = data.replace(/(\r\n|\r|\n)/g, '\n');
   data = data.replace('\\', '/');
   return fromString(data);
 }
 
-export function fromString(data) {
+function fromString(data) {
   let layers = data.split('//Storyboard Layer ');
   layers.shift();
 
@@ -145,3 +145,5 @@ export function fromString(data) {
 
   return storyboard;
 }
+
+module.exports = { Storyboard, fromFile, fromString };

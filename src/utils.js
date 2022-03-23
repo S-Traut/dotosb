@@ -1,4 +1,4 @@
-export const EVENT_TYPES = new Map([
+const EVENT_TYPES = new Map([
   ["F", 1],
   ["S", 1],
   ["R", 1],
@@ -9,7 +9,7 @@ export const EVENT_TYPES = new Map([
   ["V", 2],
 ]);
 
-export const EASINGS = {
+const EASINGS = {
   Linear: 0,
   Out: 1,
   In: 2,
@@ -46,3 +46,5 @@ export const EASINGS = {
   BounceOut: 34,
   BounceInOut: 35,
 };
+
+module.exports = { EVENT_TYPES, EASINGS };

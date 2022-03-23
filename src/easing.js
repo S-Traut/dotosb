@@ -74,7 +74,7 @@ const functions = [
   elasticInOut,
 ];
 
-export function ease(easing, value) {
+function ease(easing, value) {
   return functions[easing].call(this, value);
 }
 
@@ -85,3 +85,5 @@ function reverse(func, value) {
 function toInOut(func, value) {
   return 0.5 * (value < 0.5 ? func(2 * value) : 2 - func(2 - 2 * value));
 }
+
+module.exports = { ease };

@@ -1,6 +1,6 @@
-import { Sprite } from "dotosb";
+const { Sprite } = require('./sprite.js');
 
-export default class Animation extends Sprite {
+class Animation extends Sprite {
 
   frame_count;
   frame_delay;
@@ -26,3 +26,5 @@ export default class Animation extends Sprite {
     return sprite;
   }
 }
+
+module.exports = { Animation };
