@@ -1,6 +1,2 @@
 *.osb
-tests/
-ressources/
-examples/
-src/
 .github/
