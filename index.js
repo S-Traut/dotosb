@@ -12,4 +12,6 @@ exports.createEvent = Events.newEvent;
 exports.createParam = Events.newParam;
 exports.Easing = EASINGS;
 exports.Event = EVENTS;
+exports.FromString = Storyboard.fromString;
+exports.FromFile = Storyboard.fromFile;
 exports.ease = Easings.ease;
