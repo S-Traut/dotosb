@@ -9,6 +9,17 @@ const EVENT_TYPES = new Map([
   ["V", 2],
 ]);
 
+const EVENTS = {
+  Fade: "F",
+  Scale: "S",
+  Rotate: "R",
+  Move: "M",
+  MoveX: "MX",
+  MoveY: "MY",
+  Color: "C",
+  vecScale: "V",
+};
+
 const EASINGS = {
   Linear: 0,
   Out: 1,
@@ -47,4 +58,4 @@ const EASINGS = {
   BounceInOut: 35,
 };
 
-module.exports = { EVENT_TYPES, EASINGS };
+module.exports = { EVENT_TYPES, EASINGS, EVENTS };
