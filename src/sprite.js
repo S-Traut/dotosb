@@ -30,7 +30,6 @@ class Sprite {
   * Query sprite parameters at a given time
   */
   getAt(type, time) {
-    const length = this.events.length; 
     const events = this.imap.query(time);
     for(const event of events) {
       if(event.type != type) continue;
