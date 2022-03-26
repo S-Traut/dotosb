@@ -1,6 +1,6 @@
 {
   "name": "dotosb",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Simple, dependency free osb file parser",
   "main": "index.js",
   "keywords": ["parser", "text", "file", "osb", "motion-design", "no-deps"],
