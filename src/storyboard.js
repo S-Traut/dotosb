@@ -52,10 +52,10 @@ class Storyboard {
     return storyboard;
   }
 
-  write(file_path) {
+  write(file_path, quiet) {
     fs.writeFile(file_path, this.toString(), e => {
       if(e) throw e;
-      console.log('Successfuly generated storyboard!');
+      if(!quiet) console.log('Successfuly generated storyboard!');
     });
   }
 }

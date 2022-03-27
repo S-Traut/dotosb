@@ -3,7 +3,7 @@ declare module "dotosb" {
     private layers: Map<string, Array<Sprite>>;
 
     createSprite(path: string, options?: Partial<SpriteOptions>): Sprite;
-    write(file_path: string): void;
+    write(file_path: string, quiet?: boolean): void;
     addSprite(sprite: Sprite): void;
     toString(): string;
   }

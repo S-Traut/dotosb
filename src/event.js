@@ -17,7 +17,6 @@ function isValid(event) {
 
   
   if(!type) {
-    console.trace();  
     console.log(event);
     throw `This event type is not allowed '${event.type}'\nAllowed events: ${EVENT_TYPES.values()}\n`;    
   }
@@ -26,13 +25,11 @@ function isValid(event) {
   const eval_size = Array.isArray(event.end_values) ? event.start_values.length : 1;
 
   if(sval_size != type) {
-    console.trace();
     console.log(event);
     throw `Start value(s) given for the event of type '${event.type}' are not valid\n given: ${sval_size} -> required: ${type}\n`;
   }
 
   if(event.end_values && eval_size != type) {
-    console.trace();
     throw `End value(s) given for the event of type '${event.type}' are not valid\n given: ${eval_size} -> required: ${type}\n`;
   }
 
