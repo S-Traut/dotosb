@@ -3,6 +3,7 @@ declare module "dotosb" {
     private layers: Map<string, Array<Sprite>>;
 
     createSprite(path: string, options?: Partial<SpriteOptions>): Sprite;
+    createAnimation(path: string, frame_count: number, frame_delay: number, options?: Partial<AnimationOptions>): Animation;
     write(file_path: string, quiet?: boolean): void;
     addSprite(sprite: Sprite): void;
     toString(): string;
@@ -90,12 +91,27 @@ declare module "dotosb" {
     toString(): string;
   }
 
+  class Animation extends Sprite {}
+
   type SpriteOptions = {
-    layer?: String;
-    origin?: String;
-    x?: Number;
-    y?: Number;
+    layer?: string;
+    origin?: string;
+    x?: number;
+    y?: number;
   };
+
+  enum LoopType {
+    LoopOnce = "LoopOnce",
+    LoopForever = "LoopForever"
+  }
+
+  type AnimationOptions = {
+    layer?: string;
+    origin?: string;
+    x?: number,
+    y?: number,
+    loop_type?: LoopType 
+  }
 
   type OsbEvent = {
     type: string;
